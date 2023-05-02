@@ -1,11 +1,11 @@
 ---
 hero:
-  title: React PaperCSS Design
-  description: 基于 PaperCSS 的 React ui 组件库
+  title: React PaperCSS
+  description: A react ui library based on papercss
   actions:
-    - text: 起步
+    - text: Get started
       link: /guide
-    - text: 组件
+    - text: Components
       link: /components/alert
 # features:
 #   - title: Hello
