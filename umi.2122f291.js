@@ -653,14 +653,14 @@ html.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(http://fonts.gstatic.com/s/neucha/v17/q5uGsou0JOdh94bfvQlo.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/neucha/v17/q5uGsou0JOdh94bfvQlo.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Patrick Hand SC';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(http://fonts.gstatic.com/s/patrickhandsc/v13/0nkwC9f7MfsBiWcLtY65AWDK873ljiK-.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/patrickhandsc/v13/0nkwC9f7MfsBiWcLtY65AWDK873ljiK-.ttf) format('truetype');
 }
 .dumi-default-previewer-demo html {
   --primary: #41403e;
