@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { forwardRef, useMemo } from 'react';
 import { BaseComponentProps, Size, Variant } from '../types';
 
@@ -46,7 +46,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       disabled={disabled}
       ref={ref}
       href={href}
-      className={classNames(
+      className={clsx(
         'paper-btn',
         `btn-${size}`,
         { 'btn-block': block },

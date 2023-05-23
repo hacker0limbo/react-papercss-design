@@ -1,66 +1,65 @@
-import { useThrottleFn } from 'ahooks';
-import { forwardRef, useEffect, useState } from 'react';
+import { useScroll } from 'ahooks';
+import clsx from 'clsx';
+import { forwardRef, RefObject, useMemo } from 'react';
+import { createUseStyles } from 'react-jss';
 import { useForwardRef } from '../hooks';
 import { BaseComponentProps } from '../types';
 
 export interface BackTopProps extends BaseComponentProps {
-  duration?: number;
   visibilityHeight?: number;
-  target?: () => HTMLElement | Document | Window;
+  target?: RefObject<HTMLElement>;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  children?: React.ReactNode;
 }
 
+const useStyles = createUseStyles({
+  backTop: {
+    opacity: 1,
+    display: 'inline-block',
+    padding: '1em',
+    position: 'fixed',
+    bottom: '1em',
+    right: '1em',
+  },
+  backTopInner: {
+    padding: '0.6em 1em !important',
+    borderTopLeftRadius: '185px 160px !important',
+    borderTopRightRadius: '200px 195px !important',
+    borderBottomRightRadius: '160px 195px !important',
+    borderBottomLeftRadius: '185px 190px !important',
+  },
+});
+
 const BackTop = forwardRef<HTMLDivElement, BackTopProps>((props, ref) => {
-  const { duration = 450, visibilityHeight = 400, target, onClick, className, style } = props;
+  const { visibilityHeight = 400, target, onClick, className, style, children } = props;
   const forwardedRef = useForwardRef<HTMLDivElement>(ref);
-  const [visible, setVisible] = useState<boolean>(visibilityHeight === 0);
-
-  const getDefaultTarget = (): HTMLElement | Document | Window =>
+  const defaultTarget =
     forwardedRef?.current && forwardedRef?.current?.ownerDocument
-      ? forwardedRef.current.ownerDocument
-      : window;
-
-  const getContainer = target || getDefaultTarget;
-
-  const { run: handleScroll } = useThrottleFn(
-    (e: React.UIEvent<HTMLElement, UIEvent> | { target: any }) => {
-      if (e.target.scrollTop > visibilityHeight) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    },
-    {
-      wait: duration,
-    },
-  );
-
-  useEffect(() => {
-    const container = getContainer();
-    handleScroll({ target: container });
-    container?.addEventListener('scroll', handleScroll);
-    return () => {
-      container?.removeEventListener('scroll', handleScroll);
-    };
-  }, [getContainer, handleScroll]);
+      ? forwardedRef?.current?.ownerDocument
+      : window.document;
+  const container = target?.current || defaultTarget;
+  const position = useScroll(container as any);
+  const visible = useMemo(() => {
+    return (position?.top as number) > visibilityHeight;
+  }, [position, visibilityHeight]);
+  const classes = useStyles();
 
   return visible ? (
     <div
-      className={className}
+      className={clsx(classes.backTop, className)}
       style={style}
       ref={ref}
       onClick={(e) => {
         e.stopPropagation();
-        const container = getContainer();
         if (container instanceof Document) {
-          (container as Document).documentElement.scrollTo({ behavior: 'smooth', top: 0 });
+          (container as Document).documentElement?.scrollTo({ behavior: 'smooth', top: 0 });
         } else {
-          (container as HTMLElement).scrollTo({ behavior: 'smooth', top: 0 });
+          (container as HTMLElement)?.scrollTo({ behavior: 'smooth', top: 0 });
         }
         onClick?.(e);
       }}
     >
-      BackTop
+      <span className={clsx(classes.backTopInner, 'paper-btn margin')}>{children ?? '^'}</span>
     </div>
   ) : null;
 });

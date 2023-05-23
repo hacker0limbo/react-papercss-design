@@ -6,3 +6,5 @@ export interface BaseComponentProps {
   style?: React.CSSProperties;
   className?: string;
 }
+
+export type Theme = 'light' | 'dark';

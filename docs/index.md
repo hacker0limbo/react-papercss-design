@@ -7,6 +7,8 @@ hero:
       link: /guide
     - text: 组件
       link: /components/alert
+    - text: Hooks
+      link: /hooks/a
 # features:
 #   - title: Hello
 #     emoji: 💎

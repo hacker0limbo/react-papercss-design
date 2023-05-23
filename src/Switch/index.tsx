@@ -1,5 +1,5 @@
 import { useControllableValue } from 'ahooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 
 export type SwitchType = 'default' | 'inline';
@@ -30,7 +30,7 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
     >
       <label
         ref={ref}
-        className={classNames(
+        className={clsx(
           { 'paper-switch': type === 'default', 'paper-switch-2': type === 'inline' },
           className,
         )}
@@ -54,7 +54,7 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
         />
         <span
           style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
-          className={classNames({ round }, 'paper-switch-slider')}
+          className={clsx({ round }, 'paper-switch-slider')}
         />
       </label>
     </div>

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { uniqueId } from 'lodash';
 import React, { forwardRef, useId, useState } from 'react';
 import { Variant } from '../types';
@@ -18,7 +18,7 @@ const defaultTransitionedPropertyNames = ['max-height', 'opacity', 'padding-bott
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const {
-    type = 'primary',
+    type = 'default',
     onClose,
     afterClose,
     dismissible,
@@ -60,7 +60,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
             }
           }
         }}
-        className={classNames('alert', `alert-${type}`, { dismissible }, className)}
+        className={clsx('alert', `alert-${type}`, { dismissible }, className)}
       >
         {children}
         {dismissible ? (

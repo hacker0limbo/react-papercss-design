@@ -1,5 +1,5 @@
 import { useControllableValue } from 'ahooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { Variant } from '../types';
 
@@ -39,7 +39,7 @@ const SwitchTile = forwardRef<HTMLLabelElement, SwitchTileProps>((props, ref) =>
       className="form-group"
       style={{ opacity: disabled ? 0.5 : 1, marginBottom: 0, display: 'inline-block', ...style }}
     >
-      <label ref={ref} className={classNames('paper-switch-tile', className)}>
+      <label ref={ref} className={clsx('paper-switch-tile', className)}>
         <input
           checked={_checked}
           disabled={disabled}
@@ -62,7 +62,7 @@ const SwitchTile = forwardRef<HTMLLabelElement, SwitchTileProps>((props, ref) =>
           className="paper-switch-tile-card border"
         >
           <div
-            className={classNames(
+            className={clsx(
               `paper-switch-tile-card-${_checked ? 'back' : 'front'}`,
               'border',
               `background-${_checked ? checkedType : unCheckedType}`,
@@ -71,7 +71,7 @@ const SwitchTile = forwardRef<HTMLLabelElement, SwitchTileProps>((props, ref) =>
             {_checked ? checkedChildren : unCheckedChildren}
           </div>
           <div
-            className={classNames(
+            className={clsx(
               `paper-switch-tile-card-${_checked ? 'front' : 'back'}`,
               'border',
               `background-${_checked ? unCheckedType : checkedType}`,
