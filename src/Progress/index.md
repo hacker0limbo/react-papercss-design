@@ -20,5 +20,5 @@ toc: content
 ## 示例
 
 <code src="./demos/ProgressBase.tsx"></code>
-
-<!-- <code src="./demos/ButtonSize.tsx"></code> -->
+<code src="./demos/ProgressStriped.tsx"></code>
+<code src="./demos/ProgressLabel.tsx"></code>
