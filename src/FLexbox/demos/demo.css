@@ -1,0 +1,7 @@
+.grid-demo .row .col {
+  background-color: #eee;
+}
+
+.grid-demo .row .col:nth-child(even) {
+  background-color: #ddd;
+}

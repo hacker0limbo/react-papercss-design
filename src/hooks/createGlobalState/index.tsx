@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 /**
- * 参考: https://zhuanlan.zhihu.com/p/625449484
+ 
  * 本质上调用的时候虽然存在多个 localState, 但是 setGlobalState 会以遍历的方式强制对所有的 localState 进行 setLocalState 调用
  * 保证所有的 localState 进行同步. 虽然 localState 存在多处, 但是保持是一致的
- * @param initialState
- * @returns useGlobalState
+ * @reference: https://zhuanlan.zhihu.com/p/625449484
  * @example
  * const useGlobalState = createGlobalState(0)
  * const [state, setState] = useGlobalState()

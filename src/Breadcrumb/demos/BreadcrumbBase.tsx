@@ -1,15 +1,14 @@
-/**
- * title: 基本
- * description: 基本的面包屑。
- */
+import React from 'react';
 import { Breadcrumb } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
-    <Breadcrumb>
-      <Breadcrumb.Item href="#">Page1</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">Page2</Breadcrumb.Item>
-      <Breadcrumb.Item active={true}>Page3</Breadcrumb.Item>
+    <Breadcrumb bordered>
+      <Breadcrumb.Item href="#">Documentation</Breadcrumb.Item>
+      <Breadcrumb.Item href="#">Components</Breadcrumb.Item>
+      <Breadcrumb.Item active>Breadcrumb</Breadcrumb.Item>
     </Breadcrumb>
   );
 };
+
+export default App;

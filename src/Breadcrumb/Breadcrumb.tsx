@@ -1,40 +1,57 @@
 import clsx from 'clsx';
-import { ElementType, forwardRef } from 'react';
-import { createUseStyles } from 'react-jss';
-import { BaseComponentProps } from '../types';
-import { BreadcrumbItem, BreadcrumbItemProps } from './BreadcrumbItem';
+import React, { forwardRef, useCallback } from 'react';
+import type { BreadcrumbItemProps } from './BreadcrumbItem';
+import { BreadcrumbItem } from './BreadcrumbItem';
 
-export interface BreadcrumbProps extends BaseComponentProps {
-  separator?: string;
-  as?: ElementType;
+export type BreadcrumbProps = {
+  /**
+   * 是否有边框
+   */
   bordered?: boolean;
-  children?: React.ReactNode;
+  /**
+   * 配置项书写方式
+   */
   items?: BreadcrumbItemProps[];
-}
+} & React.ComponentPropsWithoutRef<'ul'>;
 
-const useStyles = createUseStyles<any, BreadcrumbProps>({
-  breadcrumbUl: {
-    '& li + li::before': {
-      content: ({ separator = '/' }) => `"${separator} "!important`,
-    },
-  },
-});
+/**
+ * Breadcrumb 组件
+ * @reference https://github.com/react-bootstrap/react-bootstrap/blob/master/src/Breadcrumb.tsx
+ * @reference https://github.com/Tencent/tdesign-react/blob/develop/packages/components/breadcrumb/Breadcrumb.tsx
+ * TODO: 需要增加 separator 属性
+ */
+export const Breadcrumb = forwardRef<HTMLUListElement, BreadcrumbProps>((props, ref) => {
+  const { children, className, bordered = true, items, ...restProps } = props;
 
-export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>((props, ref) => {
-  const { as: Component = 'div', children, className, style, bordered = false, items } = props;
-  const classes = useStyles(props);
+  const renderBreadcrumbItems = useCallback(() => {
+    if (!items?.length) {
+      // 如果没有 items, 说明直接传入了 children
+      const isBreadcrumbItemType = React.Children.toArray(children).every(
+        (child) => React.isValidElement(child) && child.type === BreadcrumbItem,
+      );
+      if (!isBreadcrumbItemType) {
+        console.warn("Only accepts Breadcrumb.Item as it's children");
+      }
+      return children;
+    }
+
+    // 如果有 items, 说明使用配置方法
+    return (
+      <>
+        {items.map(({ children, content, ...restItemProps }, index) => (
+          <BreadcrumbItem {...restItemProps} key={index}>
+            {content ?? children}
+          </BreadcrumbItem>
+        ))}
+      </>
+    );
+  }, [items, children]);
 
   return (
-    <Component ref={ref} className={className} style={style}>
-      <ul className={clsx('breadcrumb', classes.breadcrumbUl, { border: bordered })}>
-        {items?.length
-          ? items.map(({ children, title, ...restItemProps }, index) => (
-              <BreadcrumbItem {...restItemProps} key={index}>
-                {title ?? children}
-              </BreadcrumbItem>
-            ))
-          : children}
-      </ul>
-    </Component>
+    <ul className={clsx('breadcrumb', { border: bordered }, className)} ref={ref} {...restProps}>
+      {renderBreadcrumbItems()}
+    </ul>
   );
 });
+
+Breadcrumb.displayName = 'Breadcrumb';

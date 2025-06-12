@@ -11,8 +11,6 @@ export default defineConfig({
     ],
   },
   outputPath: 'docs-dist',
-  styleLoader: {},
-  cssLoader: {},
   locales: [
     {
       id: 'zh-CN',
@@ -23,8 +21,10 @@ export default defineConfig({
       name: 'English',
     },
   ],
+  favicons: ['/react-papercss-design/favicon.png'],
   themeConfig: {
     // name: 'react papercss',
+    logo: '/react-papercss-design/favicon.png',
     nav: {
       'zh-CN': [
         { title: '起步', link: '/guide' },

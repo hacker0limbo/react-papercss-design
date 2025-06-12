@@ -1,10 +1,7 @@
-/**
- * title: 条纹类型
- * description: 通过设置`striped`显示为条纹类型的进度条
- */
+import React from 'react';
 import { Progress, Space } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
     <Space direction="vertical">
       <Progress percent={10} striped />
@@ -16,3 +13,5 @@ export default () => {
     </Space>
   );
 };
+
+export default App;

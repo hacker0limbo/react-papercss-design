@@ -1,14 +1,11 @@
-/**
- * title: 和父元素一起使用
- * description: 和父元素一起使用时自适应大小
- */
+import React from 'react';
 import { Badge } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
     <>
       <h1>
-        Example h1 heading <Badge type="default">123</Badge>
+        Example h1 heading <Badge>123</Badge>
       </h1>
       <h2>
         Example h2 heading <Badge type="primary">123</Badge>
@@ -28,3 +25,5 @@ export default () => {
     </>
   );
 };
+
+export default App;

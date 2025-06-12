@@ -1,15 +1,14 @@
-/**
- * title: 基本
- * description: 相邻组件水平间距。
- */
-import { Button, Space, Switch } from 'react-papercss-design';
+import React from 'react';
+import { Button, Space } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
-    <Space>
+    <Space gap="large">
       Space
       <Button>Button</Button>
-      <Switch />
+      <Button type="primary">Confirm</Button>
     </Space>
   );
 };
+
+export default App;

@@ -1,10 +1,7 @@
-/**
- * title: 文本颜色和背景色
- * description: 设置文本颜色和背景色
- */
+import React from 'react';
 import { Space, Typography } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
     <Space direction="vertical">
       <Typography.Text backgroundType="danger">Default Text with danger background</Typography.Text>
@@ -19,3 +16,5 @@ export default () => {
     </Space>
   );
 };
+
+export default App;

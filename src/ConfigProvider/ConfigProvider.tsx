@@ -7,6 +7,10 @@ export type ConfigProviderProps = {
   children: React.ReactNode;
 };
 
+/**
+ * 可能需要配合 dumi 实现主题切换: https://d.umijs.org/theme/api#usepreferscolor
+ * @returns
+ */
 export const ConfigProvider = ({ theme: propsTheme = 'light', children }: ConfigProviderProps) => {
   const [theme, setTheme] = useState<Theme>(propsTheme);
 

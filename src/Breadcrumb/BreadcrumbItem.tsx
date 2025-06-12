@@ -1,38 +1,29 @@
-import { ElementType, forwardRef } from 'react';
-import { BaseComponentProps } from '../types';
+import { forwardRef } from 'react';
 
-export interface BreadcrumbItemProps extends BaseComponentProps {
+export type BreadcrumbItemProps = {
+  /**
+   * 同 children 但是主要用于配置项书写
+   */
+  content?: React.ReactNode;
   active?: boolean;
   href?: string;
-  as?: ElementType;
-  linkAs?: ElementType;
   target?: string;
   children?: React.ReactNode;
-  title?: React.ReactNode;
-}
+  title?: string;
+} & React.ComponentPropsWithoutRef<'li'>;
 
-export const BreadcrumbItem = forwardRef<HTMLElement, BreadcrumbItemProps>((props, ref) => {
-  const {
-    as: Component = 'li',
-    linkAs: LinkComponent = 'a',
-    children,
-    className,
-    style,
-    href,
-    active = false,
-    target,
-    title,
-  } = props;
+export const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>((props, ref) => {
+  const { children, content, href, active = false, target, title, ...restProps } = props;
 
   return (
-    <Component ref={ref} className={className} style={style}>
+    <li ref={ref} {...restProps}>
       {active ? (
         children
       ) : (
-        <LinkComponent href={href} target={target}>
-          {children ?? title}
-        </LinkComponent>
+        <a href={href} target={target} title={title}>
+          {children ?? content}
+        </a>
       )}
-    </Component>
+    </li>
   );
 });

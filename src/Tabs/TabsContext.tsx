@@ -9,10 +9,9 @@ export const TabsContext = createContext<TabsContextType | null>(null);
 
 export const useTabsContext = () => {
   const tabsContext = useContext(TabsContext);
-  console.log('tabsContext', tabsContext);
 
   if (tabsContext === null) {
-    throw new Error('useCount must be used within a CountProvider');
+    throw new Error('useTabsContext must be used within a TabsProvider');
   }
   return tabsContext;
 };

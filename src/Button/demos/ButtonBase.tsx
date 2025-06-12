@@ -1,17 +1,16 @@
-/**
- * title: 基本
- * description: 按钮基本的样式。
- */
+import React from 'react';
 import { Button, Space } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
-    <Space>
+    <Space wrap>
       <Button>Default Button</Button>
-      <Button disabled>Disabled Button</Button>
-      <Button tag="a" href="https://www.getpapercss.com/">
-        Link Button
+      <Button asChild>
+        <a href="https://www.getpapercss.com/docs/">Link</a>
       </Button>
+      <Button disabled>Disabled Button</Button>
     </Space>
   );
 };
+
+export default App;

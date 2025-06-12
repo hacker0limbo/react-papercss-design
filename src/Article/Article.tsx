@@ -1,58 +1,26 @@
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';
-import { BaseComponentProps } from '../types';
 
-export interface ArticleProps extends BaseComponentProps {
-  children?: React.ReactNode;
-}
+/**
+ * Article 组件
+ */
+export type ArticleProps = {
+  title?: React.ReactNode;
+  meta?: React.ReactNode;
+  textLead?: React.ReactNode;
+  footer?: React.ReactNode;
+} & React.ComponentPropsWithoutRef<'article'>;
 
 export const Article = forwardRef<HTMLElement, ArticleProps>((props, ref) => {
-  const { className, style, children } = props;
+  const { title, meta, textLead, footer, className, children, ...restProps } = props;
   return (
-    <article className={clsx(className, 'article')} style={style} ref={ref}>
+    <article className={clsx(className, 'article')} ref={ref} {...restProps}>
+      <h1 className="article-title">{title}</h1>
+      <p className="article-meta">{meta}</p>
+      <p className="text-lead">{textLead} </p>
       {children}
+      {footer}
     </article>
   );
 });
-
-export interface ArticleTitleProps extends BaseComponentProps {
-  children?: React.ReactNode;
-}
-
-export const ArticleTitle = forwardRef<HTMLParagraphElement, ArticleTitleProps>((props, ref) => {
-  const { className, style, children } = props;
-
-  return (
-    <p className={clsx(className, 'article-title')} style={style} ref={ref}>
-      {children}
-    </p>
-  );
-});
-
-export interface ArticleMetaProps extends BaseComponentProps {
-  children?: React.ReactNode;
-}
-
-export const ArticleMeta = forwardRef<HTMLParagraphElement, ArticleTitleProps>((props, ref) => {
-  const { className, style, children } = props;
-
-  return (
-    <p className={clsx(className, 'article-meta')} style={style} ref={ref}>
-      {children}
-    </p>
-  );
-});
-
-export interface ArticleTextLeadProps extends BaseComponentProps {
-  children?: React.ReactNode;
-}
-
-export const ArticleTextLead = forwardRef<HTMLParagraphElement, ArticleTitleProps>((props, ref) => {
-  const { className, style, children } = props;
-
-  return (
-    <p className={clsx(className, 'text-lead')} style={style} ref={ref}>
-      {children}
-    </p>
-  );
-});
+Article.displayName = 'Article';

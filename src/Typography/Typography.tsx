@@ -1,34 +1,71 @@
 import clsx from 'clsx';
 import React, { forwardRef, useMemo } from 'react';
-import { BaseComponentProps, Variant } from '../types';
+import { Variant } from '../types';
 
-export interface TypographyBaseProps extends BaseComponentProps {
+export type TypographyBaseProps = {
+  /**
+   * Title 组件的类型, 1-6 代表 h1-h6
+   */
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-  renderType?: 'title' | 'text' | 'paragraph' | 'link' | 'code' | 'snippet' | 'kbd';
+  /**
+   * 底层用于渲染的元素类型
+   */
+  renderType: 'title' | 'text' | 'paragraph' | 'link' | 'code' | 'codeBlock' | 'kbd';
+  /**
+   * 文字颜色
+   */
   textType?: Variant | 'muted';
+  /**
+   * 背景颜色
+   */
   backgroundType?: Variant | 'muted';
-  children?: React.ReactNode;
-}
+} & React.HTMLAttributes<HTMLElement>;
 
-// text, paragraph
-export type TypographyTextProps = Omit<TypographyBaseProps, 'level' | 'renderType'>;
-// code, snippet, kbd
+// text
+export type TypographyTextProps = Omit<TypographyBaseProps, 'level' | 'renderType'> &
+  React.ComponentPropsWithoutRef<'span'>;
+
+// paragraph
+export type TypographyParagraphProps = Omit<TypographyBaseProps, 'level' | 'renderType'> &
+  React.ComponentPropsWithoutRef<'p'>;
+
+// code
 export type TypographyCodeProps = Omit<
   TypographyBaseProps,
   'level' | 'renderType' | 'textType' | 'backgroundType'
 >;
+
+// codeBlock
+export type TypographyCodeBlockProps = Omit<
+  TypographyBaseProps,
+  'level' | 'level' | 'renderType' | 'textType' | 'backgroundType'
+> &
+  React.ComponentPropsWithoutRef<'pre'>;
+
+// kbd
+export type TypographyKBDProps = Omit<
+  TypographyBaseProps,
+  'level' | 'renderType' | 'textType' | 'backgroundType'
+> &
+  React.ComponentPropsWithoutRef<'kbd'>;
+
 // title
-export type TypographyTitleProps = Omit<TypographyBaseProps, 'renderType'>;
+export type TypographyTitleProps = Omit<TypographyBaseProps, 'renderType'> &
+  React.ComponentPropsWithoutRef<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
+
 // link
 export type TypographyLinkProps = Omit<TypographyBaseProps, 'level' | 'renderType'> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  React.ComponentPropsWithoutRef<'a'>;
 
+/**
+ * Typography 组件
+ * @reference https://github.com/3lang3/react-vant/blob/main/packages/react-vant/src/components/typography/Typography.tsx
+ */
 export const Typography = forwardRef<HTMLElement, TypographyBaseProps>((props, ref) => {
   const {
     className,
-    style,
     children,
-    renderType,
+    renderType = 'span',
     level = 1,
     textType,
     backgroundType,
@@ -42,7 +79,7 @@ export const Typography = forwardRef<HTMLElement, TypographyBaseProps>((props, r
         return 'p';
       case 'code':
         return 'code';
-      case 'snippet':
+      case 'codeBlock':
         return 'pre';
       case 'kbd':
         return 'kbd';
@@ -70,15 +107,15 @@ export const Typography = forwardRef<HTMLElement, TypographyBaseProps>((props, r
 
   return (
     <TagElement
-      {...restProps}
       ref={ref}
-      style={style}
       className={clsx(className, {
         [`text-${textType}`]: textType,
         [`background-${backgroundType}`]: backgroundType,
       })}
+      {...restProps}
     >
-      {children}
+      {/* 这里如果是 codeBlock 的话里面还要再包一层 <code> 使得 dom 结构为 <pre><code>children</code></pre> */}
+      {renderType === 'codeBlock' ? <code>{children}</code> : children}
     </TagElement>
   );
 });

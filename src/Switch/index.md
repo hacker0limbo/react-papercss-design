@@ -2,7 +2,9 @@
 title: Switch
 demo:
   cols: 2
-group: 基本
+group:
+  title: 数据录入
+  order: 4
 toc: content
 ---
 

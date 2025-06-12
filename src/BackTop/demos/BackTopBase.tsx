@@ -1,11 +1,7 @@
-/**
- * title: 基本
- * description: 基本的回到顶部。
- */
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { BackTop } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -28,3 +24,5 @@ export default () => {
     </div>
   );
 };
+
+export default App;

@@ -1,10 +1,11 @@
 import clsx from 'clsx';
+import { omit } from 'lodash-es';
 import React, { forwardRef } from 'react';
 import { createUseStyles } from 'react-jss';
-import { BaseComponentProps } from '../types';
+import { useDefaultProps } from '../hooks';
 
 const formatJustifyContent = (
-  justify: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch',
+  justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch',
 ) => {
   switch (justify) {
     case 'start':
@@ -28,7 +29,8 @@ const formatJustifyContent = (
 
 type Gap = 'small' | 'medium' | 'large' | number | string;
 
-export interface SpaceProps extends BaseComponentProps {
+// 用于样式的 props
+export interface SpaceStyleProps {
   /**
    * 间距方向
    */
@@ -42,7 +44,7 @@ export interface SpaceProps extends BaseComponentProps {
    */
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch';
   /**
-   * 是否自动换行, 仅在 horizontal 下有效
+   * 是否自动换行
    */
   wrap?: boolean;
   /**
@@ -54,15 +56,25 @@ export interface SpaceProps extends BaseComponentProps {
    * @default 16px
    */
   gap?: Gap | [Gap, Gap];
-  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
-  children?: React.ReactNode;
 }
 
-const useStyles = createUseStyles<'space' | 'spaceItem', SpaceProps>({
+export type SpaceProps = SpaceStyleProps & React.ComponentPropsWithoutRef<'div'>;
+
+const defaultSpaceStyleProps: SpaceStyleProps = {
+  direction: 'horizontal',
+  align: 'center',
+  justify: 'start',
+  wrap: false,
+  block: false,
+  gap: 'medium',
+};
+
+type SpaceRuleNames = 'space' | 'spaceItem';
+
+const useStyles = createUseStyles<SpaceRuleNames, SpaceProps>({
   space: {
-    display: ({ block = false, direction = 'horizontal' }) =>
-      block || direction === 'vertical' ? 'flex' : 'inline-flex',
-    gap: ({ gap = 'medium' }) => {
+    display: ({ block, direction }) => (block || direction === 'vertical' ? 'flex' : 'inline-flex'),
+    gap: ({ gap }) => {
       const gapOptions: Record<string, string> = {
         small: '8px',
         medium: '16px',
@@ -74,31 +86,35 @@ const useStyles = createUseStyles<'space' | 'spaceItem', SpaceProps>({
         return typeof gap === 'string' ? gapOptions[gap] || gap : `${gap}px`;
       }
     },
-    flexDirection: ({ direction = 'horizontal' }) =>
-      direction === 'horizontal' ? 'row' : 'column',
-    flexWrap: ({ wrap = false }) => (wrap ? 'wrap' : 'nowrap'),
-    justifyContent: ({ justify }) => (justify ? formatJustifyContent(justify) : 'normal'),
-    alignItems: ({ align, direction = 'horizontal' }) =>
-      align ? align : direction === 'horizontal' ? 'center' : 'normal',
+    flexDirection: ({ direction }) => (direction === 'horizontal' ? 'row' : 'column'),
+    flexWrap: ({ wrap }) => (wrap ? 'wrap' : 'nowrap'),
+    justifyContent: ({ justify }) => formatJustifyContent(justify),
+    alignItems: ({ align, direction }) =>
+      align ? align : direction === 'horizontal' ? 'center' : 'start',
   },
   spaceItem: {
+    width: ({ direction }) => (direction === 'horizontal' ? 'auto' : '100%'),
     flex: 'none',
   },
 });
 
+/**
+ * Space 组件
+ * @reference https://github.com/ant-design/ant-design-mobile/blob/master/src/components/space/space.tsx
+ */
 export const Space = forwardRef<HTMLDivElement, SpaceProps>((props, ref) => {
-  const classes = useStyles(props);
-  const { onClick, children, className, style } = props;
+  // 通过 useDefaultProps 给定默认值, 因为 Space.defaultProps 会在未来 react 版本废弃
+  const widthDefaultProps = useDefaultProps(props, defaultSpaceStyleProps);
+  const classes = useStyles(widthDefaultProps);
+
+  // 只传入 div 元素的 props
+  const { children, className, ...restProps } = omit(
+    props,
+    Object.keys(defaultSpaceStyleProps) as (keyof SpaceStyleProps)[],
+  );
 
   return (
-    <div
-      className={clsx(classes.space, className)}
-      style={style}
-      ref={ref}
-      onClick={(e) => {
-        onClick?.(e);
-      }}
-    >
+    <div className={clsx(classes.space, className)} ref={ref} {...restProps}>
       {React.Children.map(children, (c) => c)
         ?.filter((c) => c !== null && c !== undefined)
         ?.map((child, index) => {

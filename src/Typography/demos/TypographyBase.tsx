@@ -1,10 +1,7 @@
-/**
- * title: 基本
- * description: 展示文档样例。
- */
+import React from 'react';
 import { Typography } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
     <>
       <Typography.Title>About PaperCSS</Typography.Title>
@@ -53,3 +50,5 @@ export default () => {
     </>
   );
 };
+
+export default App;

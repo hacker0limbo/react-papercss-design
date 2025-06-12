@@ -1,10 +1,7 @@
-/**
- * title: 基本
- * description: 基本的进度条
- */
+import React from 'react';
 import { Progress, Space } from 'react-papercss-design';
 
-export default () => {
+const App: React.FC = () => {
   return (
     <Space direction="vertical">
       <Progress percent={10} />
@@ -16,3 +13,5 @@ export default () => {
     </Space>
   );
 };
+
+export default App;
