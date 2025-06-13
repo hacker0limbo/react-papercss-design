@@ -23,6 +23,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
+    "release": "np",
     "start": "npm run dev"
   },
   "commitlint": {
@@ -67,6 +68,7 @@
     "gh-pages": "^5.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "np": "^10.2.0",
     "papercss": "^1.9.2",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
