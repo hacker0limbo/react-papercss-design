@@ -44,7 +44,7 @@ export default App;
 
 ## Contributing
 
-Contributing is welcome. Read [guidelines for contributing](./CONTRIBUTING.md) for more details
+Contributing is welcome. Read [CONTRIBUTING](./CONTRIBUTING.md) for more details
 
 ## Thanks
 
