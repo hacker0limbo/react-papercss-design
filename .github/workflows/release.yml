@@ -6,23 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Generate release notes
-        run: npx conventional-changelog-cli -p angular -r 1 -o RELEASE_BODY.md
-
       - name: Release
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          body_path: RELEASE_BODY.md
           token: ${{ secrets.PERSONAL_TOKEN }}
+          generate_release_notes: true
