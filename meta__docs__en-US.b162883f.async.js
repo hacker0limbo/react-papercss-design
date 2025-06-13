@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_papercss_design=self.webpackChunkreact_papercss_design||[]).push([[7430],{82908:function(e,s,n){n.r(s),n.d(s,{demos:function(){return c}});var t=n(67294),_=n(18810),c={}},93698:function(e,s,n){n.r(s),n.d(s,{texts:function(){return _}});var t=n(18810);const _=[]}}]);
