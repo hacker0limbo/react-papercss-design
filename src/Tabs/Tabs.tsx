@@ -1,6 +1,6 @@
 import { useControllableValue } from 'ahooks';
 import clsx from 'clsx';
-import { omit, uniqueId } from 'lodash';
+import { omit, uniqueId } from 'lodash-es';
 import React, { useMemo } from 'react';
 import { TabContent } from './TabContent';
 import { TabPane, TabPaneItemProps, TabPaneProps } from './TabPane';

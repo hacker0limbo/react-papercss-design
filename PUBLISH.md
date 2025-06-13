@@ -17,7 +17,7 @@ Github action is configured. Each time a commit pushed to master will trigger do
 
 ## Publish Components
 
-Use [np](https://github.com/sindresorhus/np) to publish, check out the [configs](./.np-config.json)
+Use [np](https://github.com/sindresorhus/np) to publish.
 
 ```bash
 npm run release

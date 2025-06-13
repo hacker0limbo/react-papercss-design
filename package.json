@@ -1,6 +1,6 @@
 {
   "name": "react-papercss-design",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A react ui library based on papercss",
   "homepage": "https://hacker0limbo.github.io/react-papercss-design/",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
-    "release": "np",
+    "release": "np --yolo",
     "start": "npm run dev"
   },
   "commitlint": {
