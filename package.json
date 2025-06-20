@@ -49,8 +49,7 @@
     ]
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.2.2",
-    "ahooks": "^3.7.6",
+    "ahooks": "^3.8.5",
     "clsx": "^1.2.1",
     "lodash-es": "^4.17.21",
     "react-jss": "^10.10.0"

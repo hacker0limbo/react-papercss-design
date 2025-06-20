@@ -18,8 +18,8 @@ toc: content
 
 ## API
 
-| 参数        | 说明              | 类型                                     | 默认值  |
-| ----------- | ----------------- | ---------------------------------------- | ------- |
-| `label`     | Popover 的内容    | `string`                                 | -       |
-| `placement` | Popover 的位置    | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` |
-| `children`  | 触发 Popover 组件 | `'ReactElement'`                         | -       |
+| 参数      | 说明              | 类型                                     | 默认值  |
+| --------- | ----------------- | ---------------------------------------- | ------- |
+| label     | Popover 的内容    | `string`                                 | -       |
+| placement | Popover 的位置    | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` |
+| children  | 触发 Popover 组件 | `'ReactElement'`                         | -       |

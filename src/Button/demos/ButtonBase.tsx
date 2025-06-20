@@ -5,8 +5,8 @@ const App: React.FC = () => {
   return (
     <Space wrap>
       <Button>Default Button</Button>
-      <Button asChild>
-        <a href="https://www.getpapercss.com/docs/">Link</a>
+      <Button as="a" href="https://www.getpapercss.com/docs/">
+        Link
       </Button>
       <Button disabled>Disabled Button</Button>
     </Space>

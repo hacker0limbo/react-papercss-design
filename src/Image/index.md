@@ -20,8 +20,8 @@ toc: content
 
 ## API
 
-| 参数         | 说明           | 类型                | 默认值 |
-| ------------ | -------------- | ------------------- | ------ |
-| `responsive` | 是否响应式     | `boolean`           | `true` |
-| `bordered`   | 是否显示边框   | `boolean`           | `true` |
-| `float`      | 图片的浮动方向 | `'left' \| 'right'` | -      |
+| 参数       | 说明           | 类型                | 默认值 |
+| ---------- | -------------- | ------------------- | ------ |
+| responsive | 是否响应式     | `boolean`           | `true` |
+| bordered   | 是否显示边框   | `boolean`           | `true` |
+| float      | 图片的浮动方向 | `'left' \| 'right'` | -      |

@@ -25,14 +25,14 @@ toc: content
 
 ### Space
 
-| 参数        | 说明                                                       | 类型                                                                             | 默认值         |
-| ----------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------- |
-| `direction` | 间距方向                                                   | `'horizontal' \| 'vertical'`                                                     | `'horizontal'` |
-| `align`     | 交叉轴对齐方式                                             | `'start' \| 'end' \| 'center' \| 'baseline'`                                     | `'center'`     |
-| `justify`   | 主轴对齐方式                                               | `'start' \| 'end' \| 'center' \| 'between' \| 'around' \| 'evenly' \| 'stretch'` | `'start'`      |
-| `wrap`      | 是否自动换行                                               | `boolean`                                                                        | `false`        |
-| `block`     | 是否渲染为块级元素                                         | `boolean`                                                                        | `false`        |
-| `gap`       | 间距大小, 设为数组时则分别设置垂直方向和水平方向的间距大小 | [Gap](#gap) \| [[Gap, Gap]](#gap)                                                | `'medium'`     |
+| 参数      | 说明                                                       | 类型                                                                             | 默认值         |
+| --------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------- |
+| direction | 间距方向                                                   | `'horizontal' \| 'vertical'`                                                     | `'horizontal'` |
+| align     | 交叉轴对齐方式                                             | `'start' \| 'end' \| 'center' \| 'baseline'`                                     | `'center'`     |
+| justify   | 主轴对齐方式                                               | `'start' \| 'end' \| 'center' \| 'between' \| 'around' \| 'evenly' \| 'stretch'` | `'start'`      |
+| wrap      | 是否自动换行                                               | `boolean`                                                                        | `false`        |
+| block     | 是否渲染为块级元素                                         | `boolean`                                                                        | `false`        |
+| gap       | 间距大小, 设为数组时则分别设置垂直方向和水平方向的间距大小 | [Gap](#gap) \| [[Gap, Gap]](#gap)                                                | `'medium'`     |
 
 ### Gap
 

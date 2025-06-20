@@ -28,12 +28,13 @@ export default defineConfig({
     nav: {
       'zh-CN': [
         { title: '起步', link: '/guide' },
-        { title: '组件', link: '/components/alert' },
-        { title: 'Hooks', link: '/hooks/a' },
+        { title: '组件', link: '/components/article' },
+        { title: 'Hooks', link: '/hooks/intro' },
       ],
       'en-US': [
         { title: 'Get Started', link: '/en-US/guide' },
-        { title: 'Components', link: '/en-US/components/alert' },
+        { title: 'Components', link: '/en-US/components/article' },
+        { title: 'Hooks', link: '/en-US/hooks/intro' },
       ],
     },
     socialLinks: {

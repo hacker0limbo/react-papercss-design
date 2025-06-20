@@ -4,6 +4,13 @@
   </a>
 
   <h3 align="center">React PaperCSS Design</h3>
+
+  <div align="center">
+
+[![npm (tag)](https://img.shields.io/npm/v/react-papercss-design)](https://www.npmjs.com/package/react-papercss-design) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-papercss-design) [![GitHub](https://img.shields.io/github/license/hacker0limbo/react-papercss-design)](https://github.com/hacker0limbo/react-papercss-design/blob/master/LICENSE)
+
+  </div>
+
 </p>
 
 简体中文 | [English](./README.md)

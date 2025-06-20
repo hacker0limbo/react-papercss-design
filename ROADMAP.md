@@ -1,5 +1,7 @@
 # Roadmap
 
+## Existed components from PaperCSS
+
 Components:
 
 - [x] Alerts
@@ -9,14 +11,14 @@ Components:
 - [x] Buttons
 - [x] Cards
 - [x] Collapsibles
-- [ ] Forms
-  - [ ] Input
-  - [ ] Textarea
-  - [ ] Select
-  - [ ] Radio
-  - [ ] Check
-  - [ ] Switch
-  - [ ] Slider
+- [x] Forms
+  - [x] Input
+  - [x] Textarea
+  - [x] Select
+  - [x] Radio
+  - [x] Check
+  - [x] Switch
+  - [x] Slider
 - [x] Modals
 - [x] Navbar
 - [x] Popovers
@@ -39,5 +41,16 @@ Layout
 Utilities
 
 - [x] Colors
-- [ ] Dark Mode
+- [x] Dark Mode
 - [x] Spacing
+
+## New components
+
+Reference: https://oli8.github.io/spaper/
+
+- [x] Space
+- [ ] Carousel
+- [ ] NumberInput
+- [ ] Hero
+- [ ] Pagination
+- [ ] Toast

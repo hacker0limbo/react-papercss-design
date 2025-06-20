@@ -27,53 +27,53 @@ toc: content
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `div`  |
+| as   | 默认渲染元素 | `ReactElement` | `div`  |
 
 ### CardBody
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `div`  |
+| as   | 默认渲染元素 | `ReactElement` | `div`  |
 
 ### CardFooter
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `div`  |
+| as   | 默认渲染元素 | `ReactElement` | `div`  |
 
 ### CardHeader
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `div`  |
+| as   | 默认渲染元素 | `ReactElement` | `div`  |
 
 ### CardImg
 
-| 参数        | 说明         | 类型           | 默认值 |
-| ----------- | ------------ | -------------- | ------ |
-| `as`        | 默认渲染元素 | `ReactElement` | `img`  |
-| `placement` | 默认渲染元素 | `ReactElement` | -      |
+| 参数      | 说明         | 类型           | 默认值 |
+| --------- | ------------ | -------------- | ------ |
+| as        | 默认渲染元素 | `ReactElement` | `img`  |
+| placement | 默认渲染元素 | `ReactElement` | -      |
 
 ### CardLink
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `a`    |
+| as   | 默认渲染元素 | `ReactElement` | `a`    |
 
 ### CardTitle
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `h4`   |
+| as   | 默认渲染元素 | `ReactElement` | `h4`   |
 
 ### CardSubtitle
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `h5`   |
+| as   | 默认渲染元素 | `ReactElement` | `h5`   |
 
 ### CardText
 
 | 参数 | 说明         | 类型           | 默认值 |
 | ---- | ------------ | -------------- | ------ |
-| `as` | 默认渲染元素 | `ReactElement` | `p`    |
+| as   | 默认渲染元素 | `ReactElement` | `p`    |

@@ -1,6 +1,8 @@
 ---
 title: ConfigProvider
-group: 其他
+group:
+  title: 其他
+  order: 7
 toc: content
 ---
 
@@ -18,7 +20,7 @@ import { ConfigProvider } from 'react-papercss-design';
 
 // ...
 const Demo = () => (
-  <ConfigProvider theme="dark">
+  <ConfigProvider theme="light">
     <App />
   </ConfigProvider>
 );
@@ -26,6 +28,10 @@ const Demo = () => (
 export default Demo;
 ```
 
-## 示例
+更多主题相关的请参考: [主题](../../docs/guide/theme.md)
 
-<code src="./demos/ConfigProviderTheme.tsx"></code>
+## API
+
+| 参数  | 说明 | 类型                | 默认值    |
+| ----- | ---- | ------------------- | --------- |
+| theme | 主题 | `'light' \| 'dark'` | `'light'` |

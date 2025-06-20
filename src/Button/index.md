@@ -24,11 +24,11 @@ toc: content
 
 ## API
 
-| 参数     | 说明                                                                                                 | 类型                                                             | 默认值  |
-| -------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------- |
-| color    | 按钮的颜色                                                                                           | `'primary'`, `'secondary'`, `'success'`, `'warning'`, `'danger'` | -       |
-| size     | 按钮的尺寸, 不给值为中等大小                                                                         | `'small'`, `'large'`                                             | -       |
-| block    | 是否为块级按钮                                                                                       | `boolean`                                                        | `false` |
-| outline  | 是否为轮廓按钮                                                                                       | `boolean`                                                        | `false` |
-| disabled | 是否禁用按钮                                                                                         | `boolean`                                                        | `false` |
-| asChild  | 是否渲染成子元素, 可参考: [composition](https://www.radix-ui.com/primitives/docs/guides/composition) | `boolean`                                                        | `false` |
+| 参数     | 说明                         | 类型                                                             | 默认值   |
+| -------- | ---------------------------- | ---------------------------------------------------------------- | -------- |
+| color    | 按钮的颜色                   | `'primary'`, `'secondary'`, `'success'`, `'warning'`, `'danger'` | -        |
+| size     | 按钮的尺寸, 不给值为中等大小 | `'small'`, `'large'`                                             | -        |
+| block    | 是否为块级按钮               | `boolean`                                                        | `false`  |
+| outline  | 是否为轮廓按钮               | `boolean`                                                        | `false`  |
+| disabled | 是否禁用按钮                 | `boolean`                                                        | `false`  |
+| as       | 渲染的元素                   | `React.ElementType`                                              | `button` |

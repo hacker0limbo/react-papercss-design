@@ -1,12 +1,14 @@
 ---
 hero:
-  title: React PaperCSS
-  description: A react ui library based on PaperCSS
+  title: React PaperCSS Design
+  description: A react ui component library based on PaperCSS
   actions:
     - text: Get started
       link: /en-US/guide
     - text: Components
-      link: /en-US/components/alert
+      link: /en-US/components/article
+    - text: Hooks
+      link: /en-US/hooks/intro
 # features:
 #   - title: Hello
 #     emoji: 💎

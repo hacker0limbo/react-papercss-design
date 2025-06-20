@@ -1,6 +1,7 @@
 ---
 title: 快速上手
 toc: content
+order: 1
 ---
 
 # 开始
@@ -38,11 +39,9 @@ import 'papercss/dist/paper.min.css'; // or import 'papercss/dist/paper.css';
 
 const App = () => {
   return (
-    <>
-      <Button onClick={() => console.log('Hello react papercss design!')} color="primary">
-        PaperCSS
-      </Button>
-    </>
+    <Button type="primary" onClick={() => console.log('Hello react papercss design!')}>
+      PaperCSS
+    </Button>
   );
 };
 
@@ -51,4 +50,8 @@ createRoot(document.getElementById('root')).render(<App />);
 
 ### 更多用法
 
-你可以在组件页面的左侧菜单查看组件列表. 组件文档中提供了各类演示, 最下方有组件 API 文档可以查阅. 在代码演示部分找到第一个例子, 点击右下角的图标展开代码. 可以直接在展开的代码里进行编辑, 效果会实时进行展示.
+:::success{title="实时编辑展示"}
+示例代码展开后, 可以直接在展开的代码里进行编辑, 效果会实时进行展示!
+:::
+
+你可以在组件页面的左侧菜单查看组件列表. 组件文档中提供了各类演示, 最下方有组件 API 文档可以查阅.

@@ -6,9 +6,9 @@ hero:
     - text: 起步
       link: /guide
     - text: 组件
-      link: /components/alert
+      link: /components/article
     - text: Hooks
-      link: /hooks/a
+      link: /hooks/intro
 # features:
 #   - title: Hello
 #     emoji: 💎

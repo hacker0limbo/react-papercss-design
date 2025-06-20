@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ThemeContext } from '../theme';
 import { Theme } from '../types';
 
@@ -8,18 +8,23 @@ export type ConfigProviderProps = {
 };
 
 /**
- * 可能需要配合 dumi 实现主题切换: https://d.umijs.org/theme/api#usepreferscolor
- * @returns
+ * ConfigProvider component
  */
 export const ConfigProvider = ({ theme: propsTheme = 'light', children }: ConfigProviderProps) => {
   const [theme, setTheme] = useState<Theme>(propsTheme);
+  const lastPropTheme = useRef<Theme>(propsTheme);
+
+  // sync props.theme to state
+  useEffect(() => {
+    if (propsTheme !== lastPropTheme.current) {
+      setTheme(propsTheme);
+      lastPropTheme.current = propsTheme;
+    }
+  }, [propsTheme]);
 
   useEffect(() => {
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
+    // when theme changes to 'dark', add 'dark' class to document, else remove it
+    document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;

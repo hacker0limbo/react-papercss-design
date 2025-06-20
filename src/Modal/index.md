@@ -30,24 +30,24 @@ toc: content
 
 ### Modal
 
-| 参数             | 说明                    | 类型                                                             | 默认值          |
-| ---------------- | ----------------------- | ---------------------------------------------------------------- | --------------- |
-| `open`           | 是否显示模态框          | `boolean`                                                        | -               |
-| `title`          | 标题内容                | `React.ReactNode`                                                | -               |
-| `subtitle`       | 副标题内容              | `React.ReactNode`                                                | -               |
-| `onOk`           | 点击确定按钮的回调      | `(e: MouseEvent) => void`                                        | -               |
-| `onCancel`       | 点击取消/关闭按钮的回调 | `(e: MouseEvent) => void`                                        | -               |
-| `footer`         | 自定义底部内容          | `React.ReactNode`                                                | -               |
-| `container`      | 指定挂载节点            | `HTMLElement \| () => HTMLElement \| null`                       | `document.body` |
-| `closable`       | 是否显示右上角关闭按钮  | `boolean`                                                        | `true`          |
-| `closeLabel`     | 关闭按钮内容            | `React.ReactNode`                                                | `'X'`           |
-| `bodyStyle`      | 内容区域自定义样式      | `React.CSSProperties`                                            | -               |
-| `destroyOnClose` | 关闭时是否卸载 DOM      | `boolean`                                                        | `false`         |
-| `maskClosable`   | 点击遮罩是否可关闭      | `boolean`                                                        | `true`          |
-| `okText`         | 确认按钮文本            | `string`                                                         | `'Ok'`          |
-| `cancelText`     | 取消按钮文本            | `string`                                                         | `'Cancel'`      |
-| `okType`         | 确认按钮类型            | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'secondary'`   |
-| `width`          | 模态框宽度              | `string \| number`                                               | `480`           |
+| 参数           | 说明                    | 类型                                                             | 默认值          |
+| -------------- | ----------------------- | ---------------------------------------------------------------- | --------------- |
+| open           | 是否显示模态框          | `boolean`                                                        | -               |
+| title          | 标题内容                | `React.ReactNode`                                                | -               |
+| subtitle       | 副标题内容              | `React.ReactNode`                                                | -               |
+| onOk           | 点击确定按钮的回调      | `(e: MouseEvent) => void`                                        | -               |
+| onCancel       | 点击取消/关闭按钮的回调 | `(e: MouseEvent) => void`                                        | -               |
+| footer         | 自定义底部内容          | `React.ReactNode`                                                | -               |
+| container      | 指定挂载节点            | `HTMLElement \| () => HTMLElement \| null`                       | `document.body` |
+| closable       | 是否显示右上角关闭按钮  | `boolean`                                                        | `true`          |
+| closeLabel     | 关闭按钮内容            | `React.ReactNode`                                                | `'X'`           |
+| bodyStyle      | 内容区域自定义样式      | `React.CSSProperties`                                            | -               |
+| destroyOnClose | 关闭时是否卸载 DOM      | `boolean`                                                        | `false`         |
+| maskClosable   | 点击遮罩是否可关闭      | `boolean`                                                        | `true`          |
+| okText         | 确认按钮文本            | `string`                                                         | `'Ok'`          |
+| cancelText     | 取消按钮文本            | `string`                                                         | `'Cancel'`      |
+| okType         | 确认按钮类型            | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'secondary'`   |
+| width          | 模态框宽度              | `string \| number`                                               | `480`           |
 
 ### Modal.info
 
@@ -57,10 +57,10 @@ toc: content
 - `footer`样式改为只有一个按钮点击后即关闭, 同时会触发`onOk`回调, 所以可以提供一个`onOk`函数在关闭模态框时候触发
 - `maskClosable`默认改为`false`, 无法点击弹框外部遮罩层关闭
 
-| 参数           | 说明                    | 类型           | 默认值  |
-| -------------- | ----------------------- | -------------- | ------- |
-| ~`open`~       | ~不再需要提供~          | ~`boolean`~    | -       |
-| ~`onCancel`~   | ~不再需要提供~          | ~`() => void`~ | -       |
-| `onOk`         | 点击确定按钮的回调      | `() => void`   | -       |
-| `maskClosable` | 点击遮罩是否可关闭      | `boolean`      | `false` |
-| ...            | 剩余`Modal`的`props`... | ...            | ..      |
+| 参数         | 说明                    | 类型           | 默认值  |
+| ------------ | ----------------------- | -------------- | ------- |
+| ~open~       | ~不再需要提供~          | ~`boolean`~    | -       |
+| ~onCancel~   | ~不再需要提供~          | ~`() => void`~ | -       |
+| onOk         | 点击确定按钮的回调      | `() => void`   | -       |
+| maskClosable | 点击遮罩是否可关闭      | `boolean`      | `false` |
+| ...          | 剩余`Modal`的`props`... | ...            | ..      |
