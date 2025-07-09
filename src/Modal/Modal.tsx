@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Button } from '../Button';
+import useLocale from '../i18n/useLocale';
 import { Portal, PortalProps } from '../Portal';
 import { Space } from '../Space';
 import { Variant } from '../types';
@@ -89,6 +90,7 @@ const useStyles = createUseStyles<ModalRuleNames, Pick<ModalProps, 'width' | 'ma
  * Modal component, a dialog box that appears on top of the current page
  */
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
+  const { t } = useLocale();
   const {
     title,
     subtitle,
@@ -103,8 +105,8 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) =
     destroyOnClose = false,
     maskClosable = true,
     children,
-    okText = 'Ok',
-    cancelText = 'Cancel',
+    okText = t('modal.ok'),
+    cancelText = t('modal.cancel'),
     okType = 'secondary',
     width = 480,
     ...restProps
@@ -117,7 +119,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) =
   }
 
   return (
-    <Portal container={container}>
+    <Portal container={container} id="modal-portal-root">
       <div className={clsx('modal', { [classes.open]: open })} ref={ref} {...restProps}>
         <div
           className={clsx('modal-bg', classes.modalBg)}

@@ -17,9 +17,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Open Modal with customized footer
-      </Button>
+      <Button onClick={showModal}>Open Modal with customized footer</Button>
 
       <Modal
         title="Modal Title"

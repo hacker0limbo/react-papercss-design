@@ -13,8 +13,8 @@ There are two ways to import hooks: you can import from `react-papercss-design/h
 
 ```jsx | pure
 // Direct import
-import { useTheme } from 'react-papercss-design';
+import { useTheme, useLocale } from 'react-papercss-design';
 
 // Import from hooks
-import { useTheme } from 'react-papercss-design/hooks';
+import { useTheme, useLocale } from 'react-papercss-design/hooks';
 ```

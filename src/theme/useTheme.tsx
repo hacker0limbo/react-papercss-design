@@ -7,7 +7,7 @@ export default function useTheme() {
   const themeContext = useContext(ThemeContext);
 
   return {
-    theme: themeContext?.theme ?? 'light',
+    theme: themeContext?.theme,
     setTheme: themeContext?.setTheme ?? (() => {}),
     tokens: tokens[themeContext?.theme ?? 'light'],
   };

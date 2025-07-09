@@ -13,8 +13,8 @@ React Vant 内置了一小部分的 hooks, 帮助组件开发和使用
 
 ```jsx | pure
 // 直接引入
-import { useTheme } from 'react-papercss-design';
+import { useTheme, useLocale } from 'react-papercss-design';
 
 // 从 hooks 里引入
-import { useTheme } from 'react-papercss-design/hooks';
+import { useTheme, useLocale } from 'react-papercss-design/hooks';
 ```

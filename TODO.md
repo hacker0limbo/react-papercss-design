@@ -13,3 +13,5 @@
 - [x] 使用 lodash-es 替代 lodash 减少打包体积
 - [x] 使用 np 来发布包
 - [x] github actions 自动发布文档
+- [] i18n, modal, pagination 组件
+- [] locale 在 iframe 下存在问题: https://github.com/umijs/dumi/issues/2291

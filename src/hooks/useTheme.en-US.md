@@ -7,9 +7,9 @@ toc: content
 
 Get the current theme, set the current theme, and get theme `tokens`
 
-Please ensure your component is wrapped inside `ConfigProvider` when using this hook. For specific usage, see: [ConfigProvider](../ConfigProvider/index.md)
+Please ensure your component is wrapped inside `ConfigProvider` when using this hook. For specific usage, see: [ConfigProvider](../ConfigProvider/index.en-US.md)
 
-For more theme-related details, refer to: [Theme](../../docs/guide/theme.md)
+For more theme-related details, refer to: [Theme](../../docs/guide/theme.en-US.md)
 
 ## Example
 

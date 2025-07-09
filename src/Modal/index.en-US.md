@@ -14,9 +14,9 @@ Reference: [Modals](https://www.getpapercss.com/docs/components/modals/)
 
 ## Examples
 
-<code src="./demos/ModalBase.tsx" title="Basic" description="Basic dialog" iframe="true"></code>
-<code src="./demos/ModalFooter.tsx" title="Custom Footer" description="Use `footer` to customize footer, set to `null` if no footer is needed" iframe="true"></code>
-<code src="./demos/ModalInfo.tsx" title="Static Methods" description="Use `Modal.info({ ... })` to quickly open a modal" iframe="true"></code>
+<code src="./demos/ModalBase.tsx" title="Basic" description="Basic dialog" iframe="300"></code>
+<code src="./demos/ModalFooter.tsx" title="Custom Footer" description="Use `footer` to customize footer, set to `null` if no footer is needed" iframe="300"></code>
+<code src="./demos/ModalOpen.tsx" title="Static Methods" description="Use `Modal.open({ ... })` to quickly open a modal" iframe="300"></code>
 
 ## Comparison
 
@@ -49,9 +49,9 @@ The React wrapped `Modal` component has some differences from the original `Pape
 | okType         | OK button type                               | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'secondary'`   |
 | width          | Modal width                                  | `string \| number`                                               | `480`           |
 
-### Modal.info
+### Modal.open
 
-`Modal.info` is a function that can conveniently and quickly open a confirmation dialog. The parameter is an object whose properties are **basically the same** as the `Modal` properties above, except for the following points:
+`Modal.open` is a function that can conveniently and quickly open a confirmation dialog. The parameter is an object whose properties are **basically the same** as the `Modal` properties above, except for the following points:
 
 - You no longer need to provide `open` and `onCancel` state, this method manages them internally
 - `footer` style is changed to have only one button that closes when clicked and triggers the `onOk` callback, so you can provide an `onOk` function to trigger when the modal closes

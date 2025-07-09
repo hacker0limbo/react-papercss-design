@@ -1,6 +1,19 @@
 # Changelog
 
-## [0.0.11] - 2026-6-20
+## [0.1.1] - 2026-7-8
+
+### ✨ Features
+
+- add `Pagination` and `Message` components
+- add Internationalization
+
+## [0.1.0] - 2026-6-21
+
+### 📚 Docs
+
+- add complete english documentation
+
+## [0.0.11] - 2025-6-20
 
 ### ✨ Features
 

@@ -14,9 +14,9 @@ toc: content
 
 ## 示例
 
-<code src="./demos/ModalBase.tsx" title="基本" description="基本的对话框" iframe="true"></code>
-<code src="./demos/ModalFooter.tsx" title="自定义页脚" description="使用`footer`自定义页脚, 如果不需要页脚可以设置为`null`" iframe="true"></code>
-<code src="./demos/ModalInfo.tsx" title="静态方法" description="可以使用`Modal.info({ ... })`来快速打开一个模态框" iframe="true"></code>
+<code src="./demos/ModalBase.tsx" title="基本" description="基本的对话框" iframe="300"></code>
+<code src="./demos/ModalFooter.tsx" title="自定义页脚" description="使用`footer`自定义页脚, 如果不需要页脚可以设置为`null`" iframe="300"></code>
+<code src="./demos/ModalOpen.tsx" title="静态方法" description="可以使用`Modal.open({ ... })`来快速打开一个模态框" iframe="300"></code>
 
 ## 比较
 
@@ -49,9 +49,9 @@ toc: content
 | okType         | 确认按钮类型            | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'secondary'`   |
 | width          | 模态框宽度              | `string \| number`                                               | `480`           |
 
-### Modal.info
+### Modal.open
 
-`Modal.info`为一个函数, 可以方便快速打开一个点击确认的弹框, 参数是一个对象, 对象属性和上面的`Modal`的属性**基本一致**, 除了以下几点需要注意:
+`Modal.open`为一个函数, 可以方便快速打开一个点击确认的弹框, 参数是一个对象, 对象属性和上面的`Modal`的属性**基本一致**, 除了以下几点需要注意:
 
 - 你不再需要提供`open`和`onCancel`状态, 该方法内部会自动管理
 - `footer`样式改为只有一个按钮点击后即关闭, 同时会触发`onOk`回调, 所以可以提供一个`onOk`函数在关闭模态框时候触发

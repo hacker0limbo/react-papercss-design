@@ -1,4 +1,4 @@
-import { ConfigProvider, ConfigProviderProps } from './ConfigProvider';
+import { ConfigProvider, ConfigProviderProps, Locale, Theme } from './ConfigProvider';
 
 export { ConfigProvider };
-export type { ConfigProviderProps };
+export type { ConfigProviderProps, Locale, Theme };

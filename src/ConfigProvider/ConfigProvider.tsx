@@ -1,31 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ThemeContext } from '../theme';
-import { Theme } from '../types';
+import { LocaleProvider } from '../i18n/LocaleProvider';
+import { type Locale } from '../i18n/locales';
+import { type Theme } from '../theme/ThemeContext';
+import { ThemeProvider } from '../theme/ThemeProvider';
 
 export type ConfigProviderProps = {
   theme?: Theme;
-  children: React.ReactNode;
+  locale?: Locale;
+  children?: React.ReactNode;
 };
 
-/**
- * ConfigProvider component
- */
-export const ConfigProvider = ({ theme: propsTheme = 'light', children }: ConfigProviderProps) => {
-  const [theme, setTheme] = useState<Theme>(propsTheme);
-  const lastPropTheme = useRef<Theme>(propsTheme);
-
-  // sync props.theme to state
-  useEffect(() => {
-    if (propsTheme !== lastPropTheme.current) {
-      setTheme(propsTheme);
-      lastPropTheme.current = propsTheme;
-    }
-  }, [propsTheme]);
-
-  useEffect(() => {
-    // when theme changes to 'dark', add 'dark' class to document, else remove it
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [theme]);
-
-  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
+export const ConfigProvider = ({ theme, locale, children }: ConfigProviderProps) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <LocaleProvider locale={locale}>{children}</LocaleProvider>
+    </ThemeProvider>
+  );
 };
+
+export type { Locale, Theme };

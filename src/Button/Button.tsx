@@ -21,7 +21,7 @@ export const Button: DynamicRefForwardingComponent<'button', ButtonProps> = Reac
     const {
       type,
       outline = false,
-      size,
+      size = 'default',
       block = false,
       disabled,
       as: Comp = 'button',
@@ -38,7 +38,7 @@ export const Button: DynamicRefForwardingComponent<'button', ButtonProps> = Reac
         disabled={disabled}
         className={clsx(
           'paper-btn',
-          size && `btn-${size}`,
+          size !== 'default' && `btn-${size}`,
           { 'btn-block': block },
           { disabled },
           outline ? `btn-${type}-outline` : type && `btn-${type}`,

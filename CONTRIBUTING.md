@@ -1,10 +1,10 @@
 # CONTRIBUTING
 
-欢迎参与开发, 请在开始前花一点时间阅读这篇指南
+Welcome to contribute! Please take a moment to read this guide before getting started.
 
-## 开发指南
+## Development Guide
 
-请确保已经安装了 Node.js, 拉取项目以后使用`npm install`安装依赖, 随后使用`npm run dev`开启项目
+Please ensure that Node.js is installed. After cloning the project, use `npm install` to install dependencies, then use `npm run dev` to start the project.
 
 ```bash
 npm install
@@ -12,42 +12,42 @@ npm run dev
 # open http://localhost:8000
 ```
 
-该项目集合了组件库编译和文档, 因此无需再做别的工作, 您可以查看`package.json`查看更多信息
+This project integrates component library compilation and documentation, so no additional work is needed. You can check `package.json` for more information.
 
-## 技术栈
+## Tech Stack
 
-该项目使用了如下技术栈:
+This project uses the following tech stack:
 
-- [dumi](https://github.com/umijs/dumi) 用于生成静态文档. 类似于 [Docusaurus](https://docusaurus.io/) 或者 [Storybook](https://storybook.js.org/)
-- [father](https://github.com/umijs/father) 用于组件库的打包
-- [React-JSS](https://cssinjs.org/react-jss/) 用于组件库的样式编写
-- [ahooks](https://ahooks.js.org/) 常用的 hooks
-- [clsx](https://github.com/lukeed/clsx) 快速操作`className`的工具库
-- [lodash](https://lodash.com/docs/4.17.15) 工具库
+- [dumi](https://github.com/umijs/dumi) for generating static documentation. Similar to [Docusaurus](https://docusaurus.io/) or [Storybook](https://storybook.js.org/)
+- [father](https://github.com/umijs/father) for component library bundling
+- [React-JSS](https://cssinjs.org/react-jss/) for component library styling
+- [ahooks](https://ahooks.js.org/) commonly used hooks
+- [clsx](https://github.com/lukeed/clsx) utility library for fast `className` manipulation
+- [lodash](https://lodash.com/docs/4.17.15) utility library
 
-## 项目结构
+## Project Structure
 
 <Tree>
   <ul>
     <li>
       src
-      <small>组件目录</small>
+      <small>Component directory</small>
       <ul>
         <li>
           Button
           <ul>
             <li>
               demos
-              <small>组件 demos</small>
+              <small>Component demos</small>
               <ul></ul>
             </li>
             <li>
               index.md
-              <small>组件文档</small>
+              <small>Component documentation</small>
             </li>
             <li>
               Button.tsx
-              <small>组件源码</small>
+              <small>Component source code</small>
             </li>
           </ul>
         </li>
@@ -55,19 +55,19 @@ npm run dev
     </li>
     <li>
       docs
-      <small>其他页面文档</small>
+      <small>Other page documentation</small>
     </li>
     <li>
       .dumirc.ts
-      <small>文档相关配置</small>
+      <small>Documentation related configuration</small>
     </li>
   </ul>
 </Tree>
 
-更多请参考 dumi 的文档: [约定式路由](https://d.umijs.org/guide/conventional-routing)
+For more information, please refer to dumi documentation: [Conventional Routing](https://d.umijs.org/guide/conventional-routing)
 
-## API 设计和组件编写
+## API Design and Component Development
 
-API 设计主要参考了 [Ant Design](https://ant.design/) 和 [React Bootstrap](https://react-bootstrap.netlify.app/). 样式上尽量做到和 PaperCSS 一致. 所有 PaperCSS 上列举的功能均包含在内, 并添加了一些高级用法
+The API design is primarily based on [Ant Design](https://ant.design/) and [React Bootstrap](https://react-bootstrap.netlify.app/). The styling aims to be consistent with PaperCSS. All features listed on PaperCSS are included, with additional advanced usage patterns.
 
-除了官网上罗列的组件外, 还有一些组件计划开发中, 你可以查看 [ROADMAP](https://github.com/hacker0limbo/react-papercss-design/blob/master/ROADMAP.md) 获取更多信息
+Besides the components listed on the official website, there are also some components planned for development. You can check [ROADMAP](https://github.com/hacker0limbo/react-papercss-design/blob/master/ROADMAP.md) for more information.

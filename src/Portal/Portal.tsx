@@ -5,12 +5,13 @@ export type PortalProps = {
   children: React.ReactNode;
   // element to append the portal to, can be a function that returns an HTMLElement or null, default is document.body
   container?: HTMLElement | (() => HTMLElement | null);
+  id?: string;
 };
 
 /**
  * Portal component to render children into a different part of the DOM tree.
  */
-export const Portal = ({ children, container }: PortalProps) => {
+export const Portal = ({ children, container, id = 'portal-root' }: PortalProps) => {
   const [mountNode, setMountNode] = useState<HTMLElement | null>(null);
 
   useLayoutEffect(() => {
@@ -22,6 +23,7 @@ export const Portal = ({ children, container }: PortalProps) => {
     };
 
     const node = document.createElement('div');
+    node.setAttribute('id', id);
     getContainer().appendChild(node);
     setMountNode(node);
 
@@ -29,7 +31,7 @@ export const Portal = ({ children, container }: PortalProps) => {
       node.parentNode?.removeChild(node);
       setMountNode(null);
     };
-  }, [container]);
+  }, [container, id]);
 
   if (!mountNode) return null;
 

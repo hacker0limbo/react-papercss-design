@@ -13,7 +13,7 @@
 
 </p>
 
-English | [简体中文](./README-zh_CN.md)
+English | [简体中文](./README.zh-CN.md)
 
 React PaperCSS Design is a UI component library based on [PaperCSS](https://getpapercss.com)
 

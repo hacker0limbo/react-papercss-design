@@ -20,7 +20,7 @@ import { ConfigProvider } from 'react-papercss-design';
 
 // ...
 const Demo = () => (
-  <ConfigProvider theme="light">
+  <ConfigProvider theme="light" locale="zh-CN">
     <App />
   </ConfigProvider>
 );
@@ -28,10 +28,14 @@ const Demo = () => (
 export default Demo;
 ```
 
-For more theme-related information, please refer to: [Theme](../../docs/guide/theme.en-US.md)
+For more global configuration information, please refer to:
+
+- [Theme](../../docs/guide/theme.en-US.md)
+- [Internationalization](../../docs/guide/i18n.en-US.md)
 
 ## API
 
-| Property | Description | Type                | Default   |
-| -------- | ----------- | ------------------- | --------- |
-| theme    | Theme       | `'light' \| 'dark'` | `'light'` |
+| Property | Description | Type                 | Default   |
+| -------- | ----------- | -------------------- | --------- |
+| theme    | Theme       | `'light' \| 'dark'`  | `'light'` |
+| locale   | Locale      | `'en-US' \| 'zh-CN'` | `'en-US'` |

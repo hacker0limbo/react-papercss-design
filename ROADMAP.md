@@ -52,5 +52,5 @@ Reference: https://oli8.github.io/spaper/
 - [ ] Carousel
 - [ ] NumberInput
 - [ ] Hero
-- [ ] Pagination
-- [ ] Toast
+- [x] Pagination
+- [x] Toast(Message)

@@ -4,4 +4,4 @@ toc: content
 order: 10
 ---
 
-<embed src="../../CONTRIBUTING.md"></embed>
+<embed src="../../CONTRIBUTING.zh-CN.md"></embed>

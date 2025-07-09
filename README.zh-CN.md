@@ -51,7 +51,7 @@ export default App;
 
 ## 贡献
 
-欢迎任何愿意参与贡献的参与者, 请阅读 [CONTRIBUTING](./CONTRIBUTING.md) 获取更多信息
+欢迎任何愿意参与贡献的参与者, 请阅读 [CONTRIBUTING](./CONTRIBUTING.zh-CN.md) 获取更多信息
 
 ## 鸣谢
 

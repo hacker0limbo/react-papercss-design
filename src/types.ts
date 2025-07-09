@@ -1,8 +1,6 @@
 export type Variant = 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
 
-export type Size = 'large' | 'small';
-
-export type Theme = 'light' | 'dark';
+export type Size = 'large' | 'small' | 'default';
 
 // reference: https://github.com/react-restart/ui/blob/main/src/types.ts#L7
 export type AssignPropsWithRef<Inner extends string | React.ComponentType<any>, P> = Omit<
